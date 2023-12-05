@@ -8,18 +8,18 @@
 USE [NC03_ORDERENTRY]
 GO
 
-/* 1. Đối với một đơn đặt hàng của khách hàng cụ thể, 
+/* 1. Đối với một đơn đặt hàng của khách hàng cụ thể,
  * tổng chi phí đơn đặt hàng là bao nhiêu?
  */
 SELECT CUSTOMER_IDENTIFIER, ORDER_NUMBER, TOTAL_COST FROM ORDERS
-WHERE CUSTOMER_IDENTIFIER = 'CS00001' AND ORDER_NUMBER = 'OD00001'
+WHERE CUSTOMER_IDENTIFIER = 'CS03392' AND ORDER_NUMBER = 'OD18350'
 GO
 
 /* 2. Đối với một sản phẩm quảng cáo (Advertised_Item) cụ thể,
  * giá thấp nhất mà nhà cung cấp hiện đang cung cấp là bao nhiêu?
  */
 SELECT ITEM_NUMBER, LOWEST_PURCHASE_PRICE FROM ADVERTISED_ITEM
-WHERE ITEM_NUMBER = 'IT00001'
+WHERE ITEM_NUMBER = 'IT70000'
 GO
 
 /* 3. Khi thông tin khách hàng được truy xuất,
