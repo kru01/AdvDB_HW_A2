@@ -23,9 +23,6 @@ SQLCMD -E -dmaster -f65001 -i".\data\customer.sql"
 @echo ---- Populating CREDIT_CARD...
 SQLCMD -E -dmaster -f65001 -i".\data\creditCard.sql"
 
-@echo ---- Updating CUSTOMER_PREFERRED_CARD...
-SQLCMD -E -dmaster -f65001 -i".\data\updatePreferedCard.sql"
-
 @echo ---- Populating ORDERS...
 SQLCMD -E -dmaster -f65001 -i".\data\orders.sql"
 
@@ -40,6 +37,9 @@ SQLCMD -E -dmaster -f65001 -i".\data\supplier.sql"
 
 @echo ---- Populating RESTOCK_ITEM...
 SQLCMD -E -dmaster -f65001 -i".\data\restockItem.sql"
+
+@echo ---- Updating CUSTOMER_PREFERRED_CARD...
+SQLCMD -E -dmaster -f65001 -i".\data\updatePreferedCard.sql"
 
 REM Creating Indices
 @echo ---- Creating Indices...
