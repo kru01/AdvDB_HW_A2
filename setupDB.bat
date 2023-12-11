@@ -8,6 +8,10 @@ REM Init Database
 SQLCMD -E -dmaster -f65001 -i".\createDB.sql"
 
 @echo ---- Creating Partitions...
+if not exist "C:\N03_SQLPartitions" (
+    md "C:\N03_SQLPartitions"
+    @echo Successfully created N03_SQLPartitions folder in C drive.
+)
 for %%G in (.\partitions\*.sql) do SQLCMD -E -dmaster -f65001 -i"%%G"
 
 @echo ---- Creating Functions...
