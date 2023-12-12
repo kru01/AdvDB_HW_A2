@@ -34,7 +34,10 @@ All the folders and files are pretty self-explanatory, but here are some notable
 1. Start the SQL Server and connect to it.
     - Make sure you have sufficient privileges.
 2. Run `setupDB.bat`.
-    - **_The `updatePreferredCard.sql` might take forever to complete_**. After a while, consider terminating the process and move on to manually running `indices.sql`.
+    - The partition files will be stored in the `C` drive, inside a folder named `N03_SQLPartitions`, which is created by `setupDB.bat`.
+        - If this storage should be moved, the filepath specified in `setupdDB.bat`, and all `FILENAME` fields in every script belonging to the `partitions` folder need to be updated accordingly.
+        - If the `setupDB.bat`'s path is not changed, you need to manually create the new storage folder. Otherwise, **_SQL Server won't generate the folder if it doesn't exist_**.
+    - The average time for the setup to complete falls in the range of **_45min to 1h_**. It's possible to manually run each script, however, the execution order in `setupDB.bat` should still be respected.
 
 ## Built With
 
